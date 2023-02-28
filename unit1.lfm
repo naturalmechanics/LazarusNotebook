@@ -1,0 +1,879 @@
+object Form1: TForm1
+  Left = 188
+  Height = 880
+  Top = 139
+  Width = 1654
+  Caption = 'Notebook Application'
+  ClientHeight = 880
+  ClientWidth = 1654
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  object Panel1: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 36
+    Top = 0
+    Width = 1654
+    Anchors = [akTop, akLeft, akRight]
+    BevelOuter = bvNone
+    Color = clMenuBar
+    ParentColor = False
+    TabOrder = 0
+  end
+  object StatusBar1: TStatusBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 23
+    Top = 857
+    Width = 1654
+    Panels = <    
+      item
+        Text = '00'
+        Width = 200
+      end    
+      item
+        Text = '11'
+        Width = 100
+      end    
+      item
+        Text = '22'
+        Width = 100
+      end    
+      item
+        Text = '33'
+        Width = 100
+      end    
+      item
+        Text = '44'
+        Width = 50
+      end    
+      item
+        Text = '55'
+        Width = 50
+      end    
+      item
+        Text = '66'
+        Width = 50
+      end    
+      item
+        Text = '77'
+        Width = 50
+      end    
+      item
+        Text = '88'
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object Panel2: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Splitter1
+    AnchorSideBottom.Control = StatusBar1
+    Left = 0
+    Height = 821
+    Top = 36
+    Width = 415
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ClientHeight = 821
+    ClientWidth = 415
+    Constraints.MinWidth = 415
+    TabOrder = 2
+    object Panel5: TPanel
+      AnchorSideLeft.Control = Panel2
+      AnchorSideTop.Control = Panel2
+      AnchorSideRight.Control = Panel2
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Splitter3
+      Left = 1
+      Height = 290
+      Top = 1
+      Width = 413
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ClientHeight = 290
+      ClientWidth = 413
+      Constraints.MinHeight = 290
+      TabOrder = 0
+      OnClick = Panel5Click
+      object pageColorSelector: TColorBox
+        Left = 88
+        Height = 32
+        Top = 8
+        Width = 144
+        ItemHeight = 20
+        OnChange = pageColorSelectorChange
+        TabOrder = 0
+      end
+      object pageColorLabel: TBCLabel
+        Left = 232
+        Height = 32
+        Top = 8
+        Width = 176
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = '  [Page Color not Selected]'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+        OnClick = pageColorLabelClick
+      end
+      object pageColorButton: TColorButton
+        Left = 8
+        Height = 32
+        Top = 8
+        Width = 50
+        BorderWidth = 2
+        ButtonColorSize = 16
+        ButtonColor = clBlack
+        OnClick = pageColorButtonClick
+        OnColorChanged = pageColorButtonColorChanged
+      end
+      object SpinEdit1: TSpinEdit
+        Left = 8
+        Height = 32
+        Top = 48
+        Width = 90
+        TabOrder = 1
+      end
+      object SpinEdit2: TSpinEdit
+        Left = 8
+        Height = 32
+        Top = 80
+        Width = 90
+        TabOrder = 2
+      end
+      object BCLabel2: TBCLabel
+        Left = 104
+        Height = 32
+        Top = 48
+        Width = 64
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = 'Left'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 8
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object BCLabel3: TBCLabel
+        Left = 104
+        Height = 32
+        Top = 80
+        Width = 64
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = 'Top'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 8
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object BCLabel4: TBCLabel
+        Left = 272
+        Height = 32
+        Top = 80
+        Width = 64
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = 'Bottom'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 8
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object BCLabel5: TBCLabel
+        Left = 272
+        Height = 32
+        Top = 48
+        Width = 64
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = 'Right'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 8
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object SpinEdit3: TSpinEdit
+        Left = 176
+        Height = 32
+        Top = 48
+        Width = 90
+        TabOrder = 3
+      end
+      object SpinEdit4: TSpinEdit
+        Left = 176
+        Height = 32
+        Top = 80
+        Width = 90
+        TabOrder = 4
+      end
+      object FileNameEdit1: TFileNameEdit
+        Left = 8
+        Height = 32
+        Top = 120
+        Width = 176
+        FileName = 'FileNameEdit1'
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 5
+        Text = 'FileNameEdit1'
+      end
+      object BCLabel6: TBCLabel
+        Left = 184
+        Height = 32
+        Top = 120
+        Width = 136
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = 'NONE'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 8
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object Button1: TButton
+        Left = 320
+        Height = 32
+        Top = 120
+        Width = 64
+        Caption = 'Highlight'
+        TabOrder = 6
+      end
+      object Button2: TButton
+        Left = 320
+        Height = 32
+        Top = 152
+        Width = 64
+        Caption = 'Render'
+        TabOrder = 7
+      end
+      object FileNameEdit2: TFileNameEdit
+        Left = 8
+        Height = 32
+        Top = 152
+        Width = 176
+        FileName = 'FileNameEdit1'
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 8
+        Text = 'FileNameEdit2'
+      end
+      object ComboBox1: TComboBox
+        Left = 184
+        Height = 32
+        Top = 152
+        Width = 136
+        ItemHeight = 24
+        ReadOnly = True
+        TabOrder = 9
+        Text = 'ComboBox1'
+      end
+      object applyMarginsButton: TButton
+        Left = 336
+        Height = 64
+        Top = 48
+        Width = 72
+        Caption = 'APPLY MARGINS'
+        TabOrder = 10
+      end
+      object fontGenLabel: TBCLabel
+        Left = 8
+        Height = 32
+        Top = 192
+        Width = 56
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = 'Font'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 4
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object SpinEdit7: TSpinEdit
+        Left = 72
+        Height = 32
+        Top = 192
+        Width = 72
+        TabOrder = 11
+      end
+      object scaleFontButton: TButton
+        Left = 144
+        Height = 32
+        Top = 192
+        Width = 88
+        Caption = 'Scale Font'
+        TabOrder = 12
+      end
+      object SpinEdit8: TSpinEdit
+        Left = 248
+        Height = 32
+        Top = 192
+        Width = 72
+        TabOrder = 13
+      end
+      object setBaseFontSiteButton: TButton
+        Left = 320
+        Height = 32
+        Top = 192
+        Width = 88
+        Caption = 'Set Base Size'
+        TabOrder = 14
+      end
+      object ColorButton2: TColorButton
+        Left = 8
+        Height = 32
+        Top = 224
+        Width = 50
+        BorderWidth = 2
+        ButtonColorSize = 16
+        ButtonColor = clBlack
+      end
+      object ColorBox2: TColorBox
+        Left = 88
+        Height = 32
+        Top = 224
+        Width = 120
+        ItemHeight = 20
+        TabOrder = 15
+      end
+      object fontSelectionLabel: TBCLabel
+        Left = 208
+        Height = 32
+        Top = 224
+        Width = 200
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = '  [Font and  Color not Selected]'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 4
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object fontSelectionLabel1: TBCLabel
+        Left = 8
+        Height = 24
+        Top = 264
+        Width = 50
+        AutoSize = False
+        Background.Gradient1.StartColor = clWhite
+        Background.Gradient1.EndColor = clBlack
+        Background.Gradient1.GradientType = gtLinear
+        Background.Gradient1.Point1XPercent = 0
+        Background.Gradient1.Point1YPercent = 0
+        Background.Gradient1.Point2XPercent = 0
+        Background.Gradient1.Point2YPercent = 100
+        Background.Gradient2.StartColor = clWhite
+        Background.Gradient2.EndColor = clBlack
+        Background.Gradient2.GradientType = gtLinear
+        Background.Gradient2.Point1XPercent = 0
+        Background.Gradient2.Point1YPercent = 0
+        Background.Gradient2.Point2XPercent = 0
+        Background.Gradient2.Point2YPercent = 100
+        Background.Gradient1EndPercent = 35
+        Background.Style = bbsClear
+        Border.Color = clGrayText
+        Border.Style = bboSolid
+        Caption = 'RESET'
+        FontEx.Color = clWindowText
+        FontEx.FontQuality = fqSystemClearType
+        FontEx.Shadow = False
+        FontEx.ShadowRadius = 5
+        FontEx.ShadowOffsetX = 5
+        FontEx.ShadowOffsetY = 5
+        FontEx.Style = []
+        FontEx.TextAlignment = bcaLeftCenter
+        FontEx.PaddingLeft = 4
+        Rounding.RoundX = 3
+        Rounding.RoundY = 3
+      end
+      object Button3: TButton
+        Left = 64
+        Height = 24
+        Top = 264
+        Width = 64
+        Caption = 'Highlight'
+        TabOrder = 16
+      end
+      object Button4: TButton
+        Left = 128
+        Height = 24
+        Top = 264
+        Width = 56
+        Caption = 'Render'
+        TabOrder = 17
+      end
+      object Button5: TButton
+        Left = 184
+        Height = 24
+        Top = 264
+        Width = 40
+        Caption = 'Font'
+        TabOrder = 18
+      end
+      object Button6: TButton
+        Left = 224
+        Height = 24
+        Top = 264
+        Width = 42
+        Caption = 'Sizes'
+        TabOrder = 19
+      end
+      object Button7: TButton
+        Left = 264
+        Height = 24
+        Top = 264
+        Width = 56
+        Caption = 'Margins'
+        TabOrder = 20
+      end
+      object Button8: TButton
+        Left = 320
+        Height = 24
+        Top = 264
+        Width = 42
+        Caption = 'Zoom'
+        TabOrder = 21
+      end
+      object Button9: TButton
+        Left = 360
+        Height = 24
+        Top = 264
+        Width = 42
+        Caption = 'Page'
+        TabOrder = 22
+      end
+      object pageColorSourceSwitchButton: TButton
+        Left = 56
+        Height = 32
+        Top = 8
+        Width = 32
+        Caption = '<'
+        OnClick = pageColorSourceSwitchButtonClick
+        OnMouseDown = pageColorSourceSwitchButtonMouseDown
+        TabOrder = 23
+      end
+      object fontColorSourceSwitchButton: TButton
+        Left = 56
+        Height = 32
+        Top = 224
+        Width = 32
+        Caption = '<'
+        OnClick = pageColorSourceSwitchButtonClick
+        OnMouseDown = pageColorSourceSwitchButtonMouseDown
+        TabOrder = 24
+      end
+      object ColorButton1: TColorButton
+        Left = 384
+        Height = 32
+        Top = 120
+        Width = 25
+        BorderWidth = 2
+        ButtonColorSize = 16
+        ButtonColor = clBlack
+        OnClick = ColorButton1Click
+      end
+      object ColorButton3: TColorButton
+        Left = 384
+        Height = 32
+        Top = 152
+        Width = 25
+        BorderWidth = 2
+        ButtonColorSize = 16
+        ButtonColor = clBlack
+      end
+    end
+    object Panel6: TPanel
+      AnchorSideLeft.Control = Panel2
+      AnchorSideTop.Control = Splitter3
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel2
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panel2
+      AnchorSideBottom.Side = asrBottom
+      Left = 1
+      Height = 528
+      Top = 292
+      Width = 413
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      TabOrder = 1
+    end
+    object Splitter3: TSplitter
+      AnchorSideLeft.Control = Panel2
+      AnchorSideRight.Control = Panel2
+      AnchorSideRight.Side = asrBottom
+      Cursor = crVSplit
+      Left = 1
+      Height = 2
+      Top = 290
+      Width = 413
+      Align = alNone
+      Anchors = [akLeft, akRight]
+      ResizeAnchor = akTop
+    end
+  end
+  object Panel3: TPanel
+    AnchorSideLeft.Control = Splitter2
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = StatusBar1
+    Left = 952
+    Height = 821
+    Top = 36
+    Width = 702
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ClientHeight = 821
+    ClientWidth = 702
+    TabOrder = 3
+    object renderPanel: TBCPanel
+      AnchorSideLeft.Control = Panel3
+      AnchorSideTop.Control = Panel3
+      AnchorSideRight.Control = Panel3
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panel3
+      AnchorSideBottom.Side = asrBottom
+      Left = 1
+      Height = 819
+      Top = 1
+      Width = 700
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      Background.Color = clBtnFace
+      Background.Gradient1.StartColor = clWhite
+      Background.Gradient1.EndColor = clBlack
+      Background.Gradient1.GradientType = gtLinear
+      Background.Gradient1.Point1XPercent = 0
+      Background.Gradient1.Point1YPercent = 0
+      Background.Gradient1.Point2XPercent = 0
+      Background.Gradient1.Point2YPercent = 100
+      Background.Gradient2.StartColor = clWhite
+      Background.Gradient2.EndColor = clBlack
+      Background.Gradient2.GradientType = gtLinear
+      Background.Gradient2.Point1XPercent = 0
+      Background.Gradient2.Point1YPercent = 0
+      Background.Gradient2.Point2XPercent = 0
+      Background.Gradient2.Point2YPercent = 100
+      Background.Gradient1EndPercent = 35
+      Background.Style = bbsColor
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      BevelWidth = 1
+      Border.Style = bboNone
+      FontEx.Color = clDefault
+      FontEx.FontQuality = fqSystemClearType
+      FontEx.Shadow = False
+      FontEx.ShadowRadius = 5
+      FontEx.ShadowOffsetX = 5
+      FontEx.ShadowOffsetY = 5
+      FontEx.Style = []
+      ParentBackground = False
+      Rounding.RoundX = 1
+      Rounding.RoundY = 1
+      TabOrder = 0
+      object ScrollBar1: TScrollBar
+        AnchorSideLeft.Control = renderPanel
+        AnchorSideRight.Control = renderPanel
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = renderPanel
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 16
+        Top = 803
+        Width = 700
+        Anchors = [akLeft, akRight, akBottom]
+        PageSize = 10
+        TabOrder = 0
+      end
+      object ScrollBar2: TScrollBar
+        AnchorSideLeft.Control = renderPanel
+        AnchorSideTop.Control = renderPanel
+        AnchorSideRight.Control = renderPanel
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = ScrollBar1
+        Left = 684
+        Height = 803
+        Top = 0
+        Width = 16
+        Anchors = [akTop, akRight, akBottom]
+        Kind = sbVertical
+        PageSize = 10
+        TabOrder = 1
+      end
+    end
+  end
+  object Panel4: TPanel
+    AnchorSideLeft.Control = Splitter1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Splitter2
+    AnchorSideBottom.Control = StatusBar1
+    Left = 417
+    Height = 821
+    Top = 36
+    Width = 533
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ClientHeight = 821
+    ClientWidth = 533
+    TabOrder = 4
+    object codeInput: TRichMemo
+      AnchorSideLeft.Control = Panel4
+      AnchorSideTop.Control = Panel4
+      AnchorSideRight.Control = Panel4
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panel4
+      AnchorSideBottom.Side = asrBottom
+      Left = 1
+      Height = 819
+      Top = 1
+      Width = 531
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      HideSelection = False
+      Lines.Strings = (
+        'codeInput'
+      )
+      OnKeyUp = codeInputKeyUp
+      TabOrder = 0
+      WordWrap = False
+      ZoomFactor = 1
+    end
+  end
+  object Splitter1: TSplitter
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = StatusBar1
+    Left = 415
+    Height = 821
+    Top = 36
+    Width = 2
+    Align = alNone
+    Anchors = [akTop, akBottom]
+  end
+  object Splitter2: TSplitter
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = StatusBar1
+    Left = 950
+    Height = 821
+    Top = 36
+    Width = 2
+    Align = alNone
+    Anchors = [akTop, akBottom]
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Left = 1080
+  end
+  object ActionList1: TActionList
+    Left = 976
+  end
+end
