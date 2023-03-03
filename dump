@@ -1,0 +1,110 @@
+ nodeTypes     = (unknown, localCommand, globalCommand, renderTarget, remoteResource, syntaxCommand, incomplete, erroneous );
+
+
+  TDNodePtr     = ^TDocumentNode;
+  TDocumentNode  = packed record
+
+    nType       : nodeTypes;
+    stringVal   : String;
+    command     : String;
+
+    parent      : TDNodePtr;
+    left        : TDNodePtr;
+    right       : TDNodePtr;
+    prev        : TDNodePtr;
+    next        : TDNodePtr;
+
+    children    : Array of TDNodePtr;
+
+
+
+  end;
+
+  TRenderPtr    = ^TRenderedDocument;
+  TRenderedDocument= packed record
+
+    marginTop   : Integer;
+    marginLeft  : Integer;
+    margineBottom:Integer;
+    marginRight : Integer;
+
+    pageColor   : TColor;
+    pageFont    : TFont;
+    pageFontStyle:Integer;
+    pageFontName: String;
+    pageFontColor:TColor;
+
+    pageRenderLayout:String;
+
+    // renderElements: ??
+
+  end;
+
+  TRenderElem    = ^TRenderedElement;
+  TRenderedElement= packed record
+
+    marginTop   : Integer;
+    marginLeft  : Integer;
+    margineBottom:Integer;
+    marginRight : Integer;
+
+    pageColor   : TColor;
+    pageFont    : TFont;
+    pageFontStyle:Integer;
+    pageFontName: String;
+    pageFontColor:TColor;
+
+    pageRenderLayout:String;
+
+    // renderElements: ??
+
+  end;
+
+  { documentTree }
+
+  TDocumentTree  = class
+    public
+      documentRoot  : TDNodePtr;
+      renderedPage  : TRenderPtr;
+
+      globalCommads :
+
+      constructor Create();
+  end;
+
+  { TDocumentParseEngine }
+
+  TDocumentParseEngine = class
+    public
+      syntaxDefault : Boolean;
+
+      currentInputBuffer : String;
+
+      blockedInputBuffer : Array of Strings;
+
+      currentLine: Integer;
+
+      constructor Create();
+
+
+  end;
+
+
+
+
+
+implementation
+
+{ TDocumentParseEngine }
+
+constructor TDocumentParseEngine.Create;
+begin
+
+end;
+
+{ documentTree }
+
+constructor TDocumentTree.Create;
+begin
+
+end;

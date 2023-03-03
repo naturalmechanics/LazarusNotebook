@@ -70,6 +70,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="TRenderEngine"/>
       </Unit>
+      <Unit>
+        <Filename Value="tadvanceddropdown.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TAdvancedDropDown"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

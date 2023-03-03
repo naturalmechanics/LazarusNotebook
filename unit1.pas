@@ -7,72 +7,65 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls,
   Menus, StdCtrls, BCLabel, BCPanel, RichMemo, kmemo, TAdvancedMenu, Themes,
-  TDocumentEngine, TRenderEngine,
-  ColorBox, ActnList, LCLProc, Spin, EditBtn, BCTypes;
+  TDocumentEngine, TRenderEngine, TAdvancedDropDown, math,
+  ColorBox, ActnList, LCLProc, Spin, EditBtn, BCTypes, BCListBox, BCComboBox, Types;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    manualRenderAction: TAction;
     ActionList1: TActionList;
-    ColorButton1: TColorButton;
-    ColorButton3: TColorButton;
-    pageColorSourceSwitchButton: TButton;
-    pageColorLabel: TBCLabel;
-    BCLabel2: TBCLabel;
-    BCLabel3: TBCLabel;
-    BCLabel4: TBCLabel;
-    BCLabel5: TBCLabel;
-    BCLabel6: TBCLabel;
-    Button3: TButton;
-    Button4: TButton;
-    Button5: TButton;
-    Button6: TButton;
-    Button7: TButton;
-    Button8: TButton;
-    Button9: TButton;
-    fontSelectionLabel: TBCLabel;
-    ColorBox2: TColorBox;
-    ColorButton2: TColorButton;
-    fontSelectionLabel1: TBCLabel;
-    fontColorSourceSwitchButton: TButton;
-    scaleFontButton: TButton;
-    fontGenLabel: TBCLabel;
-    FontDialog1: TFontDialog;
+    applyMarginsButton: TButton;
+    BCComboBox1: TBCComboBox;
+    BCPanel1: TBCPanel;
     renderPanel: TBCPanel;
+    renderStylePanel: TBCPanel;
+    bottomMarginLabel1: TBCLabel;
     Button1: TButton;
     Button2: TButton;
-    applyMarginsButton: TButton;
-    pageColorSelector: TColorBox;
-    pageColorButton: TColorButton;
-    ComboBox1: TComboBox;
     FileNameEdit1: TFileNameEdit;
-    FileNameEdit2: TFileNameEdit;
-    Panel1: TPanel;
+    leftMarginLabel: TBCLabel;
+    ScrollBox1: TScrollBox;
+    SpinEdit1: TSpinEdit;
+    topMarginLabel: TBCLabel;
+    bottomMarginLabel: TBCLabel;
+    rightMarginLabel: TBCLabel;
+    resetHighLightsButton: TButton;
+    resetRenderButton: TButton;
+    resetGlobalFontButton: TButton;
+    resetFontSizeButton: TButton;
+    resetMarginsButton: TButton;
+    resetZoomButton: TButton;
+    resetPageButton: TButton;
+    FontDialog1: TFontDialog;
+    fontSelectionLabel1: TBCLabel;
+    pageColorButton: TColorButton;
+    pageColorLabel: TBCLabel;
+    pageColorSelector: TColorBox;
+    pageColorSourceSwitchButton: TButton;
     Panel2: TPanel;
-    Panel3: TPanel;
-    Panel4: TPanel;
     Panel5: TPanel;
     Panel6: TPanel;
+    Panel1: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
     codeInput: TRichMemo;
-    setBaseFontSiteButton: TButton;
-    ScrollBar1: TScrollBar;
-    ScrollBar2: TScrollBar;
-    SpinEdit1: TSpinEdit;
-    SpinEdit2: TSpinEdit;
-    SpinEdit3: TSpinEdit;
-    SpinEdit4: TSpinEdit;
-    SpinEdit7: TSpinEdit;
-    SpinEdit8: TSpinEdit;
+    leftMarginSpin: TSpinEdit;
+    TopMarginSpin: TSpinEdit;
+    rightMarginSpin: TSpinEdit;
+    bottomMarginSpin: TSpinEdit;
     Splitter1: TSplitter;
     Splitter2: TSplitter;
     Splitter3: TSplitter;
     StatusBar1: TStatusBar;
+    procedure codeInputChange(Sender: TObject);
     procedure codeInputClick(Sender: TObject);
     procedure codeInputKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState
       );
     procedure ColorButton1Click(Sender: TObject);
+    procedure manualRenderActionExecute(Sender: TObject);
     procedure pageColorSelectorChange(Sender: TObject);
     procedure pageColorLabelClick(Sender: TObject);
     procedure pageColorButtonClick(Sender: TObject);
@@ -82,6 +75,11 @@ type
     procedure pageColorSourceSwitchButtonMouseDown(Sender: TObject;
       Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure Panel5Click(Sender: TObject);
+    procedure renderPanelMouseWheel(Sender: TObject; Shift: TShiftState;
+      WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
+    procedure ScrollBox1MouseWheel(Sender: TObject; Shift: TShiftState;
+      WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
+
     procedure Splitter1CanOffset(Sender: TObject; var NewOffset: Integer;
       var Accept: Boolean);
     procedure RenderMargin(Sender : TObject);
@@ -94,6 +92,7 @@ type
 var
   Form1: TForm1;
   MainMenu      : TAdvancedMenu.TAdvancedMainMenu;
+  exampleDropDown : TAdvancedDropDown.TAdvancedDropDownList;
 
   mainEngine    : TDocumentEngine.TDocumentParseEngine;
   mainRenderer  : TRenderEngine.RenderEngine;
@@ -139,6 +138,10 @@ var
   sa            : TAdvancedMenu.TProc;
 
   ids           : Integer;
+  items         : TAdvancedDropDown.TStringArray;
+  pPanel        : TBCPanel;
+
+
 
 begin
   MainMenuItems := ['File', 'Edit', 'View', 'Engine', 'Tools', 'Help'];
@@ -163,6 +166,8 @@ begin
 
   MainMenu.add_mainMenuSubMenu_byName('viewMenu', ViewMenuItems, ViewMenuItemNames);  // SUBMENU ADDED BUT WILL NOT RENDER
 
+  MainMenu.assign_subMenuShortCut('manualRenderMenu', ShortCutToText(manualRenderAction.ShortCut));
+
 
   mPanel        := Panel1;
   MainMenu.render(mPanel);
@@ -179,6 +184,35 @@ begin
   MainRenderer  := TRenderEngine.RenderEngine.Create();
 
   lastParsedLine:= -1;
+
+
+  items         := ['Lorem', 'ipsum', 'dolor', 'sit', 'amet',
+                    'consetetur', 'sadipscing', 'elitr', 'sed',
+                    'diam nonumy eirmod tempor diam nonumy eirmod tempor invidunt invidunt',
+                    'ut labore et',
+                    'dolore', 'magna aliquyam erat',
+                    'sed', 'diam', 'voluptua'];
+
+  pPanel        :=    renderStylePanel;
+
+
+  exampleDropDown := TAdvancedDropDown.TAdvancedDropDownList.Create()   ;
+  exampleDropDown.Initialize( items);
+
+  exampleDropDown.setFullWidth := True;
+  exampleDropDown.allowOverFlow:= True;
+  exampleDropDown.overFlowCounter:=2;
+
+  // exampleDropDown.dropDownHeight:=40;
+  // exampleDropDown.dropDownWidth:= 600;
+
+  //exampleDropDown.debugLabel := BCLabel1;
+
+  exampleDropDown.Render(pPanel);
+
+
+
+
 
 end;
 
@@ -269,8 +303,43 @@ begin
 
 end;
 
+procedure TForm1.manualRenderActionExecute(Sender: TObject);
+var
+  currCommand   : TDocumentEngine.TPageCommandPtr;
+begin
+
+  currCommand   := MainEngine.currDocument.pageCommandSequence;
+  if (currCommand = Nil) then Exit;
+
+  writeln('Beginning while loop ' + currCommand^.command);
+
+  while (True) do
+  begin
+
+    writeln('The command is : ' + currCommand^.command);
+
+    writeln('next is : ' +  BoolToStr(  currCommand^.next = Nil ));
+
+    if ( currCommand^.next = Nil ) then
+    begin
+      Break;
+    end;
+
+    currCommand := currCommand^.next;
+
+
+  end;
+end;
+
 procedure TForm1.codeInputClick(Sender: TObject);
 begin
+
+end;
+
+procedure TForm1.codeInputChange(Sender: TObject);
+begin
+
+
 
 end;
 
@@ -284,7 +353,16 @@ var
   parseSuccLim  : Integer;
   Proc          : TAdvancedMenu.TProc;
 
+  lCount        : String;
+  lCurnt        : String;
+
 begin
+
+  lCount        := IntToStr(codeInput.Lines.Count);
+  lCurnt        := IntToStr(codeInput.CaretPos.Y+1);
+
+  StatusBar1.Panels[4].Text:= lCurnt + '/' + lCount;
+
   if RightStr(Form1.Caption,1) <> '*' then
   begin
     Form1.Caption := Form1.Caption + '*';
@@ -314,7 +392,7 @@ begin
 
     //-----------------------     IF SUCCESSFUL, then update ---------------------//
 
-    if (MainEngine.parseInput()) then
+    if (MainEngine.parse_codeInput()) then
     begin
       lastParsedLine  := codeInput.CaretPos.Y -1;
 
@@ -336,6 +414,22 @@ procedure TForm1.Panel5Click(Sender: TObject);
 begin
 
 end;
+
+procedure TForm1.renderPanelMouseWheel(Sender: TObject; Shift: TShiftState;
+  WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
+begin
+   ScrollBox1MouseWheel(Sender, Shift, WheelDelta, MousePos,  Handled);
+end;
+
+procedure TForm1.ScrollBox1MouseWheel(Sender: TObject; Shift: TShiftState;
+  WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
+begin
+
+end;
+
+
+
+
 
 
 procedure TForm1.RenderMargin(Sender: TObject);

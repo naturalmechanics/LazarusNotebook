@@ -7,9 +7,9 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="15" Y="13"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -19,10 +19,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="303"/>
-        <CursorPos X="27" Y="328"/>
-        <UsageCount Value="58"/>
+        <TopLine Value="297"/>
+        <CursorPos X="66" Y="302"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -30,20 +29,20 @@
         <Filename Value="datatypes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="dataTypes"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="127"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="174"/>
         <CursorPos X="7" Y="150"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="tadvancedmenu.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TAdvancedMenu"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="21"/>
         <CursorPos X="44" Y="264"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -53,25 +52,36 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="31" Y="67"/>
-        <UsageCount Value="58"/>
-      </Unit>
-      <Unit>
-        <Filename Value="tdocumentengine.pas"/>
-        <UnitName Value="TDocumentEngine"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="215"/>
-        <FoldState Value=" TCFQZ2 PiTj1Qs"/>
-        <UsageCount Value="18"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="105"/>
       </Unit>
       <Unit>
         <Filename Value="trenderengine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TRenderEngine"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="14"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="12"/>
         <CursorPos X="30" Y="81"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="70"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tadvanceddropdown.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TAdvancedDropDown"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="315"/>
+        <CursorPos X="42" Y="331"/>
+        <UsageCount Value="65"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tdocumentengine.pas"/>
+        <UnitName Value="TDocumentEngine"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="75"/>
+        <CursorPos X="36" Y="110"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -79,129 +89,129 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="185"/>
         <CursorPos X="23" Y="206"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="5"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="8" Column="84" TopLine="1154"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="925" Column="22" TopLine="1303"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="605" Column="37" TopLine="596"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="573" Column="8" TopLine="566"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="624" Column="13" TopLine="603"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="925" Column="24" TopLine="638"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="46" Column="20" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="645" Column="41" TopLine="643"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="46" Column="27" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="13" Column="16"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="12" Column="30"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="211" Column="16" TopLine="181"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="315" Column="44" TopLine="288"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="8" Column="133"/>
+        <Caret Line="210" Column="16" TopLine="180"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="314" Column="53" TopLine="288"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="13" Column="8"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="74" Column="65" TopLine="41"/>
-      </Position>
-      <Position>
-        <Filename Value="tadvancedmenu.pas"/>
-        <Caret Line="254" Column="24" TopLine="219"/>
+        <Caret Line="209" Column="16" TopLine="179"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="314" Column="67" TopLine="288"/>
+        <Caret Line="208" Column="16" TopLine="178"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="316" Column="35" TopLine="284"/>
+        <Caret Line="207" Column="16" TopLine="177"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="315" Column="26" TopLine="290"/>
+        <Caret Line="208" Column="16" TopLine="178"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="87" Column="22" TopLine="66"/>
+        <Caret Line="209" Column="16" TopLine="179"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="352" Column="38" TopLine="312"/>
+        <Caret Line="218" Column="5" TopLine="197"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="351" Column="17" TopLine="316"/>
+        <Caret Line="379" TopLine="355"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="318" Column="53" TopLine="290"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="15" Column="17"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="18" Column="21"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="20" Column="21"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="34" Column="3"/>
-      </Position>
-      <Position>
-        <Filename Value="trenderengine.pas"/>
-        <Caret Line="45" Column="8" TopLine="6"/>
+        <Caret Line="75" Column="73" TopLine="57"/>
       </Position>
       <Position>
         <Filename Value="unit1.pas"/>
-        <Caret Line="321" Column="43" TopLine="305"/>
+        <Caret Line="76" Column="5" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="380" TopLine="353"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="379" Column="3" TopLine="355"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="361" Column="34" TopLine="336"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="331" Column="51" TopLine="333"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="330" Column="51" TopLine="330"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="352" Column="32" TopLine="329"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="169" Column="98" TopLine="169"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="226" Column="28" TopLine="197"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="221" Column="25" TopLine="212"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="228" Column="17" TopLine="212"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="448" Column="40" TopLine="410"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="372" Column="30" TopLine="363"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="323" Column="37" TopLine="302"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="357" Column="27" TopLine="336"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="320" Column="38" TopLine="298"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="359" Column="37" TopLine="338"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="367" Column="61" TopLine="338"/>
+      </Position>
+      <Position>
+        <Filename Value="tdocumentengine.pas"/>
+        <Caret Line="352" Column="25" TopLine="313"/>
+      </Position>
+      <Position>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="314" Column="32" TopLine="297"/>
       </Position>
     </JumpHistory>
     <RunParams>
